@@ -475,6 +475,18 @@ $sp: 767px;
   @include left($pc, $tab, $sp);
 }
 
+@mixin ltry() {
+  @include top(50%);
+  @include ty(-50%);
+  @include left(0);
+}
+
+@mixin rtry() {
+  @include top(50%);
+  @include ty(-50%);
+  @include right(0);
+}
+
 @mixin flex($ai: flex-start, $jc: space-between) {
   display: flex;
   flex-wrap: wrap;

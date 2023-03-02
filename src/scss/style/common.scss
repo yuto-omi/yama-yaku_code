@@ -11,13 +11,9 @@
 @import '../reset/**';
 
 //各ページと共通のscss
+@import '../pages/common';
 @import '../pages/**';
-
-
-
-
-
-
+@import '../parts/**';
 
 //レスポンシブでの表示非表示
 @import '../important/**';

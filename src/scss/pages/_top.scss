@@ -1,0 +1,32 @@
+.top {
+    @include pt(45px);
+
+    .mv {
+        @include flex();
+
+        .mv__left {
+            @include width(18%);
+
+            h2 {
+                @include pr(32px);
+                @include pt(18px);
+                font-size: min(2.8vw, 40px);
+                font-family: $shippori;
+                font-weight: $bold;
+                -ms-writing-mode: tb-rl;
+                writing-mode: vertical-rl;
+                @include ml(auto);
+                // img {
+                //     @include ml(auto);
+                // }
+            }
+        }
+
+        .mv__right {
+            @include width(82%);
+            // background: url(../../../assets/images/top/mv@×2_pc.webp) no-repeat center center / cover;
+            // object-fit: cover;
+            //  @include pt(56%);
+        }
+    }
+}

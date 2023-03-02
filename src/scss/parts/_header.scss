@@ -1,0 +1,173 @@
+header {
+    .pc-tab {
+        background: $white;
+
+        .header__top {
+            @include flex(center);
+            @include pt(10px);
+            @include max-width(1080px);
+            @include width(100%);
+            margin: 0 auto;
+
+            .header__topLeft {
+                nav {
+                    ul {
+                        @include flex(center, center);
+                        @include gap(24px);
+
+                        .header__topLeft-logo {
+                            img {
+                                @include width(220px);
+                            }
+                        }
+
+                        .header__topLeft-tel {
+                            img {
+                                @include width(149px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header__topRight {
+                ul {
+                    @include display(flex);
+                    @include gap(24px);
+
+                    li {
+                        a {
+                            @include fs(14px);
+                            font-weight: $bold;
+                            position: relative;
+                            @include pl(26px);
+
+                            &::after {
+                                @include position();
+                                content: "";
+                                @include ltry();
+                                @include width(20px);
+                                @include height(20px);
+                            }
+                        }
+
+                        &:nth-of-type(1) {
+                            a {
+                                &::after {
+                                    background: url(../../../assets/images/common/speaker-icon.svg) no-repeat center center / contain;
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            a {
+                                &::after {
+                                    background: url(../../../assets/images/common/contact-icon.svg) no-repeat center center / contain;
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(3) {
+                            a {
+                                &::after {
+                                    background: url(../../../assets/images/common/member-icon.svg) no-repeat center center / contain;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .header__bottom {
+            @include mt(16px);
+            position: relative;
+            background: #fff;
+
+            &:before {
+                @include position();
+                @include right(0);
+                @include bottom(-16px);
+                content: "";
+                @include width(96%);
+                @include height(67px);
+                background: $white;
+                filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.08));
+                z-index: 2;
+            }
+
+            &::after {
+                @include position();
+                @include right(0);
+                @include bottom(-44px);
+                content: "";
+                @include width(96%);
+                @include height(38px);
+                background: $white;
+                filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.08));
+                z-index: 1;
+            }
+
+            nav {
+                @include width(100%);
+                position: relative;
+                z-index: 3;
+                background: $white;
+
+                ul {
+                    @include max-width(1080px);
+                    @include width(100%);
+                    @include flex(center, center);
+                    margin: 0 auto;
+
+                    li {
+                        @include height(59px);
+                        @include width(20%);
+                        position: relative;
+
+                        &::before {
+                            @include position();
+                            @include ltry();
+                            content: "";
+                            @include height(100%);
+                            @include width(1px);
+                            background-image: linear-gradient(to top, #CCCCCC, #cccccc 1px, transparent 1px, transparent 2px);
+                            background-size: 1px 2px;
+                            background-position: left bottom;
+                            background-repeat: repeat-y;
+                        }
+
+
+                        a {
+                            @include flex(center);
+                            flex-flow: column;
+                            @include height(100%);
+                            @include fs(14px);
+                            font-weight: $bold;
+
+                            img {
+                                @include mx(auto);
+                            }
+                        }
+
+                        &:nth-last-of-type(1) {
+                            &::after {
+                                @include position();
+                                @include rtry();
+                                content: "";
+                                @include height(100%);
+                                @include width(1px);
+                                background-image: linear-gradient(to bottom, #ccc, #ccc 1px, transparent 1px, transparent 2px);
+                                background-size: 1px 2px;
+                                background-position: right top;
+                                background-repeat: repeat-y;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sp {}
+}
