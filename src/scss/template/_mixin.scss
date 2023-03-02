@@ -1,0 +1,509 @@
+/*-------------------------     mixin1    -------------------------*/
+$pc: 1025px;
+$tab1: 1024px;
+$tab2: 768px;
+$sp: 767px;
+
+@mixin pc($min: $pc) {
+
+  @media print,
+  screen and(min-width:$min) {
+    @content;
+  }
+}
+
+@mixin pc2($min: $tab2) {
+
+  @media print,
+  screen and(min-width:$min) {
+    @content;
+  }
+}
+
+@mixin tab ($max: $tab1, $min: $tab2) {
+
+  @media print,
+  screen and(max-width:$max)and(min-width:$min) {
+    @content;
+  }
+}
+
+@mixin sp2($max: $tab1) {
+  @media(max-width:$max) {
+    @content;
+  }
+}
+
+@mixin sp($max: $sp) {
+  @media(max-width:$max) {
+    @content;
+  }
+}
+
+/*-------------------------     mixin2    -------------------------*/
+// position
+@mixin position($pc: absolute, $tab: $pc, $sp: $tab) {
+  position: $pc;
+
+  @include tab {
+    position: $tab;
+  }
+
+  @include sp {
+    position: $sp;
+  }
+}
+
+@mixin top($pc: 0, $tab: $pc, $sp: $tab) {
+  top: $pc;
+
+  @include tab {
+    top: $tab;
+  }
+
+  @include sp {
+    top: $sp;
+  }
+}
+
+@mixin right($pc: 0, $tab: $pc, $sp: $tab) {
+  right: $pc;
+
+  @include tab {
+    right: $tab;
+  }
+
+  @include sp {
+    right: $sp;
+  }
+}
+
+@mixin bottom($pc: 0, $tab: $pc, $sp: $tab) {
+  bottom: $pc;
+
+  @include tab {
+    bottom: $tab;
+  }
+
+  @include sp {
+    bottom: $sp;
+  }
+}
+
+@mixin left($pc: 0, $tab: $pc, $sp: $tab) {
+  left: $pc;
+
+  @include tab {
+    left: $tab;
+  }
+
+  @include sp {
+    left: $sp;
+  }
+}
+
+// translate
+@mixin tx($pc: 0, $tab: $pc, $sp: $tab) {
+  transform: translateX($pc);
+
+  @include tab {
+    transform: translateX($tab);
+  }
+
+  @include sp {
+    transform: translateX($sp);
+  }
+}
+
+@mixin ty($pc: 0, $tab: $pc, $sp: $tab) {
+  transform: translateY($pc);
+
+  @include tab {
+    transform: translateY($tab);
+  }
+
+  @include sp {
+    transform: translateY($sp);
+  }
+}
+
+// font
+@mixin fs($pc: 0, $tab: $pc, $sp: $tab) {
+  font-size: $pc;
+
+  @include tab {
+    font-size: $tab;
+  }
+
+  @include sp {
+    font-size: $sp;
+  }
+}
+
+@mixin ls($pc: 0, $tab: $pc, $sp: $tab) {
+  letter-spacing: $pc;
+
+  @include tab {
+    letter-spacing: $tab;
+  }
+
+  @include sp {
+    letter-spacing: $sp;
+  }
+}
+
+@mixin lh($pc: 0, $tab: $pc, $sp: $tab) {
+  line-height: $pc;
+
+  @include tab {
+    line-height: $tab;
+  }
+
+  @include sp {
+    line-height: $sp;
+  }
+}
+
+// size
+@mixin width($pc: 0, $tab: $pc, $sp: $tab) {
+  width: $pc;
+
+  @include tab {
+    width: $tab;
+  }
+
+  @include sp {
+    width: $sp;
+  }
+}
+
+@mixin height($pc: 0, $tab: $pc, $sp: $tab) {
+  height: $pc;
+
+  @include tab {
+    height: $tab;
+  }
+
+  @include sp {
+    height: $sp;
+  }
+}
+
+@mixin max-width($pc: 0, $tab: $pc, $sp: $tab) {
+  max-width: $pc;
+
+  @include tab {
+    max-width: $tab;
+  }
+
+  @include sp {
+    max-width: $sp;
+  }
+}
+
+// padding
+@mixin p($pc: 0, $tab: $pc, $sp: $tab) {
+  padding: $pc;
+
+  @include tab {
+    padding: $tab;
+  }
+
+  @include sp {
+    padding: $sp;
+  }
+}
+
+@mixin pt($pc: 0, $tab: $pc, $sp: $tab) {
+  padding-top: $pc;
+
+  @include tab {
+    padding-top: $tab;
+  }
+
+  @include sp {
+    padding-top: $sp;
+  }
+}
+
+@mixin pr($pc: 0, $tab: $pc, $sp: $tab) {
+  padding-right: $pc;
+
+  @include tab {
+    padding-right: $tab;
+  }
+
+  @include sp {
+    padding-right: $sp;
+  }
+}
+
+@mixin pb($pc: 0, $tab: $pc, $sp: $tab) {
+  padding-bottom: $pc;
+
+  @include tab {
+    padding-bottom: $tab;
+  }
+
+  @include sp {
+    padding-bottom: $sp;
+  }
+}
+
+@mixin pl($pc: 0, $tab: $pc, $sp: $tab) {
+  padding-left: $pc;
+
+  @include tab {
+    padding-left: $tab;
+  }
+
+  @include sp {
+    padding-left: $sp;
+  }
+}
+
+// margin
+@mixin m($pc: 0, $tab: $pc, $sp: $tab) {
+  margin: $pc;
+
+  @include tab {
+    margin: $tab;
+  }
+
+  @include sp {
+    margin: $sp;
+  }
+}
+
+@mixin mt($pc: 0, $tab: $pc, $sp: $tab) {
+  margin-top: $pc;
+
+  @include tab {
+    margin-top: $tab;
+  }
+
+  @include sp {
+    margin-top: $sp;
+  }
+}
+
+@mixin mr($pc: 0, $tab: $pc, $sp: $tab) {
+  margin-right: $pc;
+
+  @include tab {
+    margin-right: $tab;
+  }
+
+  @include sp {
+    margin-right: $sp;
+  }
+}
+
+@mixin mb($pc: 0, $tab: $pc, $sp: $tab) {
+  margin-bottom: $pc;
+
+  @include tab {
+    margin-bottom: $tab;
+  }
+
+  @include sp {
+    margin-bottom: $sp;
+  }
+}
+
+@mixin ml($pc: 0, $tab: $pc, $sp: $tab) {
+  margin-left: $pc;
+
+  @include tab {
+    margin-left: $tab;
+  }
+
+  @include sp {
+    margin-left: $sp;
+  }
+}
+
+// display
+@mixin display($pc: block, $tab: $pc, $sp: $tab) {
+  display: $pc;
+
+  @include tab {
+    display: $tab;
+  }
+
+  @include sp {
+    display: $sp;
+  }
+}
+
+// text-align
+@mixin text-align($pc: left, $tab: $pc, $sp: $tab) {
+  text-align: $pc;
+
+  @include tab {
+    text-align: $tab;
+  }
+
+  @include sp {
+    text-align: $sp;
+  }
+}
+
+// etc
+@mixin br($pc: 0, $tab: $pc, $sp: $tab) {
+  border-radius: $pc;
+
+  @include tab {
+    border-radius: $tab;
+  }
+
+  @include sp {
+    border-radius: $sp;
+  }
+}
+
+
+
+/*-------------------------     mixin3    -------------------------*/
+@mixin txy($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  transform: translate($pc1, $pc2);
+
+  @include tab {
+    transform: translate($sp1, $sp2);
+  }
+
+  @include sp {
+    transform: translate($sp1, $sp2);
+  }
+}
+
+@mixin wh($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  @include width($pc1, $sp1);
+  @include height($pc2, $sp2);
+}
+
+@mixin px($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  @include pr($pc1, $sp1);
+  @include pl($pc2, $sp2);
+}
+
+@mixin py($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  @include pt($pc1, $sp1);
+  @include pb($pc2, $sp2);
+}
+
+@mixin pxy($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  @include px($pc1, $sp1);
+  @include py($pc2, $sp2);
+}
+
+@mixin mx($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  @include mr($pc1, $sp1);
+  @include ml($pc2, $sp2);
+}
+
+@mixin my($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  @include mt($pc1, $sp1);
+  @include mb($pc2, $sp2);
+}
+
+@mixin my2($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  @include mx(auto);
+  @include mt($pc1, $sp1);
+  @include mb($pc2, $sp2);
+}
+
+@mixin mxy($pc1: 0, $sp1: $pc1, $pc2: $pc1, $sp2: $sp1) {
+  @include mx($pc1, $sp1);
+  @include my($pc2, $sp2);
+}
+
+/*-------------------------     mixin4    -------------------------*/
+@mixin arrow($dir: right, $pc: 10px, $color: #000, $border: 1px) {
+  @include wh($pc, #{$pc * .8});
+  $deg: ('top': 225deg, 'right': -45deg, 'bottom': 45deg, 'left': 135deg);
+  content: '';
+  transform: rotate(#{map-get($deg, $dir)});
+  border-right: $color solid $border;
+  border-bottom: $color solid $border;
+}
+
+@mixin bgimg($folder, $name, $sp: false, $pos: center, $size: cover) {
+  background: url('../img/#{$folder}/#{$name}.jpg') no-repeat;
+  background-position: $pos;
+  background-size: $size;
+
+  @if($sp) {
+    @include sp {
+      background-image: url('../img/#{$folder}/#{$name}_sp.jpg');
+    }
+  }
+}
+
+@mixin box($pc: 0, $tab: $pc, $sp: $tab) {
+  @include lh($pc, $tab, $sp);
+  @include height($pc, $tab, $sp);
+  @include br($pc / 2, $tab / 2, $sp / 2);
+}
+
+@mixin ctr {
+  @include pos(50%, 50%);
+  @include txy(50%, 50%, -50%, -50%);
+}
+
+@mixin ctrx($pc: auto, $tab: $pc, $sp: $tab) {
+  @include ctr;
+  @include top($pc, $tab, $sp);
+  @include tx(50%);
+}
+
+@mixin ctrx2($pc: auto, $tab: $pc, $sp: $tab) {
+  @include ctrx;
+  @include top(auto);
+  @include bottom($pc, $tab, $sp);
+}
+
+@mixin ctry($pc: auto, $tab: $pc, $sp: $tab) {
+  @include ctr;
+  @include right($pc, $tab, $sp);
+  @include ty(-50%);
+}
+
+@mixin ctry2($pc: auto, $tab: $pc, $sp: $tab) {
+  @include ctry;
+  @include right(auto);
+  @include left($pc, $tab, $sp);
+}
+
+@mixin flex($ai: flex-start, $jc: space-between) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin gap($pc: 0, $tab: $pc, $sp: $tab) {
+  gap: $pc;
+
+  @include tab {
+    gap: $tab;
+  }
+
+  @include sp {
+    gap: $sp;
+  }
+}
+
+@mixin pos($top: 0, $right: 0, $bottom: null, $left: null) {
+  @include top($top);
+  @include right($right);
+  @include bottom($bottom);
+  @include left($left);
+  position: absolute;
+}
+
+@mixin wrap($pc: 1000px, $tab: 800px, $sp: 500px) {
+  @include width($pc + 30px, $tab + 30px, $sp + 30px);
+  @include px(15px);
+  @include my2;
+}
