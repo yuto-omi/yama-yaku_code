@@ -1,0 +1,100 @@
+footer {
+    @include mt(16px);
+    background: $skin1;
+    @include py(40px);
+    position: relative;
+
+    .footer__body {
+        display: flex;
+
+        .footer__first {
+            @include width(36%);
+            background-image: linear-gradient(to bottom, #ccc, #ccc 1px, transparent 1px, transparent 2px);
+            background-size: 1px 2px;
+            background-position: right top;
+            background-repeat: repeat-y;
+
+            .footer__first-logo {
+                @include width(220px);
+            }
+
+            .footer__first-banner {
+                @include width(234px);
+                @include mt(40px);
+            }
+
+            p {
+                @include fs(12px);
+                font-weight: $medium;
+                color: $gray1;
+                @include mt(48px);
+                letter-spacing: 0;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .footer__second {
+            @include width(24%);
+            @include pl(32px);
+            @include pr(10px);
+            background-image: linear-gradient(to bottom, #ccc, #ccc 1px, transparent 1px, transparent 2px);
+            background-size: 1px 2px;
+            background-position: right top;
+            background-repeat: repeat-y;
+
+            strong {
+                &:nth-of-type(2) {
+                    @include mt(24px);
+                }
+            }
+        }
+
+        .footer__third {
+            @include width(24%);
+            @include pl(32px);
+            @include pr(10px);
+            background-image: linear-gradient(to bottom, #ccc, #ccc 1px, transparent 1px, transparent 2px);
+            background-size: 1px 2px;
+            background-position: right top;
+            background-repeat: repeat-y;
+
+            strong {
+                &:nth-of-type(2) {
+                    @include mt(16px);
+                }
+            }
+        }
+
+        .footer__fourth {
+            @include width(17%);
+            @include pl(32px);
+
+            strong {
+                &:not(:nth-of-type(1)) {
+                    @include mb(24px);
+                }
+            }
+        }
+
+        strong {
+            @include fs(14px);
+            font-weight: $bold;
+            @include mb(16px);
+            display: block;
+        }
+
+        ul {
+            li {
+                @include fs(12px);
+                font-weight: $medium;
+
+                &:not(:nth-of-type(1)) {
+                    @include mt(8px);
+                }
+            }
+        }
+    }
+}

@@ -123,3 +123,51 @@ function my_the_post_category($anchor = true, $id = 0)
 // }
 
 // add_action('pre_get_posts', 'change_posts_per_page');
+
+//記事表示数の設定
+function change_posts_per_page($query)
+{
+    //コラム
+    if (!is_admin() && $query->is_main_query()) {    // 管理画面,メインクエリに干渉しないために必須
+        if (is_post_type_archive('pharmacy')) {     //※１　カスタム投稿タイプ「xxxx」を指定
+            $query->set('posts_per_page', '1');     //表示件数を指定
+        } else if (is_tax('area')) {                //※２　カスタムタクソノミ「yyyy」を指定
+            $query->set('posts_per_page', '1');     //表示件数を指定
+        }
+    }
+
+    // //施工事例
+    // if (!is_admin() && $query->is_main_query()) {    // 管理画面,メインクエリに干渉しないために必須
+    //     if (is_post_type_archive('works')) {     //※１　カスタム投稿タイプ「xxxx」を指定
+    //         $query->set('posts_per_page', '12');     //表示件数を指定
+    //     } else if (is_tax('case')) {                //※２　カスタムタクソノミ「yyyy」を指定
+    //         $query->set('posts_per_page', '12');     //表示件数を指定
+    //     }
+    // }
+
+    // //住まう
+    // if (!is_admin() && $query->is_main_query()) {    // 管理画面,メインクエリに干渉しないために必須
+    //     if (is_post_type_archive('owned')) {     //※１　カスタム投稿タイプ「xxxx」を指定
+    //         $query->set('posts_per_page', '10');     //表示件数を指定
+    //     }
+    // }
+    // if (!is_admin() && $query->is_main_query()) {    // 管理画面,メインクエリに干渉しないために必須
+    //     if (is_post_type_archive('condominium')) {     //※１　カスタム投稿タイプ「xxxx」を指定
+    //         $query->set('posts_per_page', '10');     //表示件数を指定
+    //     }
+    // }
+
+    // //お知らせ
+    // if (!is_admin() && $query->is_main_query()) {    // 管理画面,メインクエリに干渉しないために必須
+    //     if (is_post_type_archive('post')) {     //※１　カスタム投稿タイプ「xxxx」を指定
+    //         $query->set('posts_per_page', '10');     //表示件数を指定
+    //     }
+    // }
+
+    // if (is_category()) {
+    //     $query->set('posts_per_page', '10');
+    // }
+
+    return $query;
+}
+add_action('pre_get_posts', 'change_posts_per_page');

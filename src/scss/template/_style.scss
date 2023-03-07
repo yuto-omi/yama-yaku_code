@@ -1,5 +1,23 @@
 //font-size
 
+// @for $i from 10 through 60 {
+//   .fs#{$i} {
+//     font-size: $i + px;
+//   }
+
+//   $i: $i + 1;
+// }
+
+// @for $i from 10 through 60 {
+//   .fs_sp#{$i} {
+//     @include mq(s) {
+//       font-size: $i + px;
+//     }
+//   }
+
+//   $i: $i + 1;
+// }
+
 @for $i from 10 through 60 {
   .fs#{$i} {
     font-size: $i + px;
@@ -10,13 +28,14 @@
 
 @for $i from 10 through 60 {
   .fs_sp#{$i} {
-    @include mq(s) {
+    @include sp {
       font-size: $i + px;
     }
   }
 
   $i: $i + 1;
 }
+
 
 //font-family
 
@@ -32,8 +51,9 @@
 
 //margin/padding
 
-@for $i from 1 through 20 {
-  $eight: $i * 8;
+@for $i from 1 through 150 {
+  // $eight: $i * 8;
+  $eight: $i;
 
   .mt#{$eight} {
     margin-top: $eight + px;
@@ -68,49 +88,49 @@
   }
 
   .mt_sp#{$eight} {
-    @include mq(s) {
+   @include sp{
       margin-top: $eight + px;
     }
   }
 
   .mb_sp#{$eight} {
-    @include mq(s) {
+   @include sp{
       margin-bottom: $eight + px;
     }
   }
 
   .mr_sp#{$eight} {
-    @include mq(s) {
+   @include sp{
       margin-right: $eight + px;
     }
   }
 
   .ml_sp#{$eight} {
-    @include mq(s) {
+   @include sp{
       margin-left: $eight + px;
     }
   }
 
   .pt_sp#{$eight} {
-    @include mq(s) {
+   @include sp{
       padding-top: $eight + px;
     }
   }
 
   .pb_sp#{$eight} {
-    @include mq(s) {
+   @include sp{
       padding-bottom: $eight + px;
     }
   }
 
   .pr_sp#{$eight} {
-    @include mq(s) {
+   @include sp{
       padding-right: $eight + px;
     }
   }
 
   .pl_sp#{$eight} {
-    @include mq(s) {
+   @include sp{
       padding-left: $eight + px;
     }
   }
@@ -133,19 +153,19 @@
 }
 
 .t-left_sp {
-  @include mq(s) {
+ @include sp{
     text-align: justify;
   }
 }
 
 .t-center_sp {
-  @include mq(s) {
+ @include sp{
     text-align: center;
   }
 }
 
 .t-right_sp {
-  @include mq(s) {
+ @include sp{
     text-align: right;
   }
 }

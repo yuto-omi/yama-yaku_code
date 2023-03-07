@@ -1,0 +1,189 @@
+main.search {
+    @include fv("../../../assets/images/search/fv-search@×2.webp");
+
+    .cont1 {
+        .search__body {
+            position: relative;
+            @include max-width(800px);
+            @include width(100%);
+            @include mx(auto);
+
+            @include pc {
+                transform: translate(33px, -33px);
+            }
+
+            @include tab {
+                transform: translate(33px, 0px);
+            }
+
+            img {
+                @include width(100%);
+            }
+
+            .search__img-yamaguchi {
+                @include max-width(800px);
+                @include mx(auto);
+            }
+
+            .search__item {
+                @include position();
+                content: "";
+                border-radius: 14px;
+                border: 1px solid $blue1;
+                @include innera();
+                @include py(3px);
+                @include innera();
+                background: #fff;
+
+                p {
+                    @include pl(26px);
+                    @include pr(10px);
+                    @include fs(14px);
+                    font-weight: $bold;
+                }
+
+                &::before {
+                    @include position();
+                    @include ltry();
+                    content: "";
+                    background: url(../../../assets/images/common/arrow-icon.svg) no-repeat center center/ contain;
+                    @include width(14px);
+                    @include height(14px);
+                    @include ml(10px);
+                    @include mr(2px);
+                }
+            }
+
+            #shimonoseki {
+                @include left(2%);
+                @include top(51%);
+            }
+
+            #abutyou {
+                @include left(36%);
+                @include top(13%);
+            }
+
+            #hagishi {
+                @include left(33%);
+                @include top(29%);
+            }
+
+            #nagato {
+                @include left(13%);
+                @include top(36%);
+            }
+
+            #mineshi {
+                @include left(19%);
+                @include top(48%);
+            }
+
+            #sanyouonodashi {
+                @include left(4%);
+                @include top(70%);
+            }
+
+            #yamaguchishi {
+                @include left(40%);
+                @include top(46%);
+            }
+
+            #ubeshi {
+                @include left(21%);
+                @include top(68%);
+            }
+
+            #bouhushi {
+                @include left(39%);
+                @include top(64%);
+            }
+
+            #syunanshi {
+                @include left(56%);
+                @include top(54%);
+            }
+
+            #kudamatsushi {
+                @include left(55%);
+                @include top(66%);
+            }
+
+            #iwakunishi {
+                @include left(69%);
+                @include top(51%);
+            }
+
+            #hikarishi {
+                @include left(63%);
+                @include top(72%);
+            }
+
+            #tabusechou {
+                @include left(61%);
+                @include top(79%);
+            }
+
+            #hiraochou {
+                @include left(68%);
+                @include top(86%);
+            }
+
+            #kaminosekichou {
+                @include left(75%);
+                @include top(94%);
+            }
+
+            #yanaishi {
+                @include left(76%);
+                @include top(72%);
+            }
+
+            #suouoshimachou {
+                @include left(85%);
+                @include top(79%);
+            }
+
+            #wakichou {
+                @include left(82%);
+                @include top(46%);
+            }
+        }
+    }
+
+    .cont2 {
+        @include mt(30px);
+
+        ul {
+            @include width(100%);
+            @include flex();
+            @include mt(32px);
+
+            li {
+                @include width(calc(33% - 15px * 2/3));
+                background-color: $skin1;
+                border-radius: 8px;
+                @include innera();
+
+                a {
+                    @include px(23px);
+                    // @include py(24px);
+                    @include height(70px);
+                    @include flex(center, space-between);
+                }
+
+                @include flex(center, space-between);
+
+                &:nth-of-type(n + 4) {
+                    @include mt(16px);
+                }
+            }
+        }
+
+        .cont2__banner {
+            @include mt(56px);
+            @include mx(auto);
+            max-width: 590px;
+        }
+    }
+}

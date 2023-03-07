@@ -54,7 +54,7 @@ header {
                         &:nth-of-type(1) {
                             a {
                                 &::after {
-                                    background: url(../../../assets/images/common/speaker-icon.svg) no-repeat center center / contain;
+                                    background: url(../../../assets/images/common/video-icon.svg) no-repeat center center / contain;
                                 }
                             }
                         }
@@ -62,12 +62,20 @@ header {
                         &:nth-of-type(2) {
                             a {
                                 &::after {
-                                    background: url(../../../assets/images/common/contact-icon.svg) no-repeat center center / contain;
+                                    background: url(../../../assets/images/common/speaker-icon.svg) no-repeat center center / contain;
                                 }
                             }
                         }
 
                         &:nth-of-type(3) {
+                            a {
+                                &::after {
+                                    background: url(../../../assets/images/common/contact-icon.svg) no-repeat center center / contain;
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(4) {
                             a {
                                 &::after {
                                     background: url(../../../assets/images/common/member-icon.svg) no-repeat center center / contain;
@@ -84,30 +92,6 @@ header {
             position: relative;
             background: #fff;
 
-            &:before {
-                @include position();
-                @include right(0);
-                @include bottom(-16px);
-                content: "";
-                @include width(96%);
-                @include height(67px);
-                background: $white;
-                filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.08));
-                z-index: 2;
-            }
-
-            &::after {
-                @include position();
-                @include right(0);
-                @include bottom(-44px);
-                content: "";
-                @include width(96%);
-                @include height(38px);
-                background: $white;
-                filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.08));
-                z-index: 1;
-            }
-
             nav {
                 @include width(100%);
                 position: relative;
@@ -121,7 +105,7 @@ header {
                     margin: 0 auto;
 
                     li {
-                        @include height(59px);
+                        @include height(55px);
                         @include width(20%);
                         position: relative;
 

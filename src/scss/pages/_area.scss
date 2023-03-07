@@ -1,0 +1,109 @@
+main.area {
+    @include pt(97px);
+
+    .area__result {
+        @include mt(42px);
+
+        span {
+            font-family: $open;
+            @include fs(32px);
+            font-weight: $bold;
+            color: $blue1;
+            @include mr(4px);
+        }
+    }
+
+    .area__line {
+        @include mt(25px);
+        background: $blue1;
+        border-radius: 8px;
+        @include flex(center, space-around);
+        @include py(14px);
+
+        li {
+            color: $white;
+            text-align: center;
+            @include fs(14px);
+            font-weight: $bold;
+
+            &:nth-of-type(1) {
+                @include width(15%);
+            }
+
+            &:nth-of-type(2) {
+                @include width(20%);
+            }
+
+            &:nth-of-type(3) {
+                @include width(21%);
+            }
+
+            &:nth-of-type(4) {
+                @include width(16%);
+            }
+
+            &:nth-of-type(5) {
+                @include width(14%);
+            }
+
+            &:nth-of-type(6) {
+                @include width(12%);
+            }
+        }
+    }
+
+    .area__list {
+        @include mt(16px);
+
+        .area__item {
+            @include flex(center, space-around);
+            @include py(18px);
+
+            &:nth-of-type(odd) {
+                background: $gray3;
+                border-radius: 8px;
+            }
+
+            .area__item-place,
+            .area__item-title,
+            .area__item-address,
+            .area__item-tel,
+            .area__item-home,
+            .area__item-another {
+                text-align: center;
+                @include fs(14px);
+                font-weight: $medium;
+            }
+
+            .area__item-place {
+                @include width(15%);
+            }
+
+            .area__item-title {
+                @include width(20%);
+            }
+
+            .area__item-address {
+                @include width(21%);
+            }
+
+            .area__item-tel {
+                @include width(16%);
+            }
+
+            .area__item-home {
+                @include width(14%);
+            }
+
+            .area__item-another {
+                @include width(12%);
+
+                a {
+                    text-decoration: underline;
+                }
+
+                color: $gray5;
+            }
+        }
+    }
+}

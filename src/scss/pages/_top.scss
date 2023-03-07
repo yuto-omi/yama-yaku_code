@@ -1,6 +1,4 @@
 .top {
-    @include pt(45px);
-
     .mv {
         @include flex();
 
@@ -8,25 +6,105 @@
             @include width(18%);
 
             h2 {
-                @include pr(32px);
-                @include pt(18px);
+                @include pr(54px);
+                @include pt(52px);
                 font-size: min(2.8vw, 40px);
                 font-family: $shippori;
                 font-weight: $bold;
                 -ms-writing-mode: tb-rl;
                 writing-mode: vertical-rl;
                 @include ml(auto);
-                // img {
-                //     @include ml(auto);
-                // }
+                letter-spacing: 4px;
+
+                span {
+                    position: relative;
+
+                    &::after {
+                        @include position;
+                        @include rtry();
+                        @include right(-10px);
+                        content: "";
+                        @include width(8px);
+                        @include height(8px);
+                        background: #ECEFAC;
+                        border-radius: 50%;
+                    }
+                }
             }
         }
 
         .mv__right {
             @include width(82%);
-            // background: url(../../../assets/images/top/mv@×2_pc.webp) no-repeat center center / cover;
-            // object-fit: cover;
-            //  @include pt(56%);
+        }
+    }
+
+
+    .search {
+        @include ty(-15%);
+
+        .titleL {
+            position: relative;
+            @include pl(46px);
+
+            &::before {
+                @include position();
+                @include ltry();
+                content: "";
+                background: url(../../../assets/images/top/search-icon.svg) no-repeat center center / contain;
+                @include width(30px);
+                @include height(30px);
+            }
+        }
+
+        .search__body {
+            position: relative;
+            @include max-width(800px);
+            @include width(100%);
+            @include mx(auto);
+
+            .search__img-yamaguchi {
+                @include max-width(800px);
+                @include mx(auto);
+            }
+
+            .search__item {
+                @include position();
+                content: "";
+                border-radius: 14px;
+                border: 1px solid $blue1;
+                @include fs(14px);
+                font-weight: $bold;
+                @include innera();
+                @include py(3px);
+                @include innera();
+                background: #fff;
+
+                a {
+                    @include pl(26px);
+                    @include pr(10px);
+                }
+
+                &::before {
+                    @include position();
+                    @include ltry();
+                    content: "";
+                    background: url(../../../assets/images/common/arrow-icon.svg) no-repeat center center/ contain;
+                    @include width(14px);
+                    @include height(14px);
+                    @include ml(10px);
+                    @include mr(2px);
+                }
+            }
+
+            #shimonoseki {
+                @include left(2%);
+                @include top(51%);
+            }
+
+            #abutyou {
+                @include left(36%);
+                @include top(13%);
+            }
         }
     }
 }

@@ -1,0 +1,26 @@
+.privacy {
+    @include fv("../../../assets/images/privacy/fv-privacy@×2.webp");
+
+    h4 {
+        @include fs(20px);
+        font-weight: $bold;
+        font-family: $shippori;
+        @include mb(19px);
+
+        span {
+            @include fs(24px);
+        }
+    }
+
+    .privacy__flex {
+        @include flex(flex-start, left);
+        @include gap(8px);
+        flex-wrap: nowrap;
+    }
+
+    .privacy__enactment {
+        @include fs(14px);
+        font-weight: $medium;
+        text-align: right;
+    }
+}

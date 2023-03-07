@@ -1,7 +1,33 @@
+main {
+    @include pt(9px);
+}
+
 .wrap1080 {
-    max-width: 1080px;
+    max-width: calc(1080px + (16px * 2));
     @include width(100%);
     margin: 0 auto;
+    @include px(16px);
+}
+
+.wrap1440 {
+    max-width: calc(1440px + (16px * 2));
+    @include width(100%);
+    margin: 0 auto;
+    @include px(16px);
+}
+
+.wrap900 {
+    max-width: calc(900px + (16px * 2));
+    @include width(100%);
+    margin: 0 auto;
+    @include px(16px);
+}
+
+@mixin innera {
+    a {
+        @include width(100%);
+        @include height(100%);
+    }
 }
 
 .pc {
@@ -53,11 +79,174 @@
     }
 }
 
+.pageTitle {
+    @include fs(40px);
+    font-weight: $bold;
+    font-family: $shippori;
+    letter-spacing: 0;
+    color: $white;
+}
+
+.titleL {
+    @include fs(28px);
+    font-weight: $bold;
+    font-family: $shippori;
+    letter-spacing: 0;
+    position: relative;
+
+    span {
+        @include fs(12px);
+        font-family: $open;
+        font-weight: $bold;
+        font-style: italic;
+        color: $gray1;
+        @include ml(8px);
+    }
+
+    &.line {
+        &:before {
+            @include position();
+            @include left(0);
+            @include top(-32px);
+            content: "";
+            @include width(96px);
+            background-color: $gray2;
+            @include height(1px);
+        }
+    }
+}
+
+
+.txt {
+    @include fs(16px);
+    font-weight: $medium;
+    letter-spacing: 0;
+}
+
+
+@mixin fv($path) {
+    .fv {
+        background: url($path) no-repeat center center / cover;
+        @include width(100%);
+        @include height(240px);
+        @include flex(center, center);
+        text-align: center;
+        position: relative;
+        @include mb(97px);
+
+        &::after {
+            position: absolute;
+            content: "";
+            background: url(../../../assets/images/common/fv@×2.png) no-repeat center center / contain;
+            @include width(344px);
+            @include height(240px);
+            @include right(100px, 0px);
+            @include top(50%);
+            @include ty(-50%);
+
+        }
+
+        span {
+            @include fs(16px);
+            font-family: $open;
+            font-weight: $semibold;
+            font-style: italic;
+            color: $gray2;
+        }
+
+        h2 {
+            color: $white;
+        }
+    }
+}
+
 
 .hover-opacity {
     transition: all 0.3s;
 
     &:hover {
         opacity: 0.7;
+    }
+}
+
+.pan {
+    @include mt(68px);
+
+    ul {
+        @include flex(center, left);
+        @include gap(22px);
+
+        li {
+            @include fs(14px);
+            font-weight: $medium;
+            position: relative;
+
+            &:not(:nth-last-of-type(1)) {
+                color: $gray1;
+            }
+
+            &:nth-of-type(n + 2) {
+                &:before {
+                    @include position();
+                    @include top(50%);
+                    @include ty(-50%);
+                    @include left(-15px);
+                    content: "";
+                    background: url(../../../assets/images/common/arrow-gray-icon.svg) no-repeat center center / contain;
+                    @include width(10px);
+                    @include height(5px);
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}
+
+.page-top {
+    @include position(fixed);
+    @include bottom(355px);
+    @include right(33px);
+    opacity: 0;
+    transition: all 0.3s;
+
+    &.is-active {
+        opacity: 1;
+    }
+
+    span {
+        @include fs(14px);
+        font-weight: $semibold;
+        font-style: italic;
+        font-family: $open;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+    }
+
+    img {
+        @include position();
+        @include width(10px);
+        @include height(64px);
+        content: "";
+        @include top(-70px);
+        @include left(50%);
+        background: url(../../../assets/images/common/to-top.svg) no-repeat center center / contain;
+    }
+}
+
+
+.btn1 {
+    @include max-width(440px);
+    @include width(100%);
+    @include innera();
+    background: $blue1;
+    @include height(56px);
+    line-height: 56px;
+    text-align: center;
+    border-radius: 28px;
+
+    a {
+        @include fs(16px);
+        font-weight: $bold;
+        color: #fff;
     }
 }

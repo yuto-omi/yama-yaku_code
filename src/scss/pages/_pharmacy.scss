@@ -1,0 +1,51 @@
+main.single-pharmacy {
+    @include pt(97px);
+
+    table {
+        @include mt(28px);
+        @include width(100%);
+        border-collapse: separate;
+        border-spacing: 0px 24px;
+
+        tr {
+            @include flex(flex-start, left);
+            border-top: 1px dotted $gray1;
+
+
+            &:nth-last-of-type(1) {
+                border-bottom: 1px dotted $gray1;
+            }
+
+            th {
+                @include width(22%);
+                text-align: left;
+                @include py(24px);
+                @include fs(14px);
+                font-weight: $medium;
+            }
+
+            td {
+                @include width(78%);
+                @include py(24px);
+                @include fs(14px);
+                font-weight: $medium;
+
+                span {
+                    position: relative;
+                    @include pl(20px);
+
+                    &:before {
+                        @include position();
+                        @include ltry();
+                        content: "〒";
+                    }
+                }
+            }
+        }
+    }
+
+    .btn1 {
+        @include mt(35px);
+        @include mx(auto);
+    }
+}
